@@ -1,7 +1,7 @@
-//import firebase from 'firebase/compat/app';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
-import firebaseConfig from '../firebase/config';
+//import firebaseConfig from '../firebase/config';
+import firebaseConfig from '../firebase/config.js'
 
 // To initialize your database, create a config.js file with your firebase configurations
 if (!firebase.apps.length) {

@@ -4,7 +4,7 @@ import ACTION_TYPES from '../../constants/actionTypes';
 import { getRoomsSuccess } from '../actions/roomsActions';
 import { showNotification } from '../actions/notificationsActions';
 import { NOTIFICATION_MESSAGE, NOTIFICATION_STATUS } from '../../constants/notifications';
-import { getRoomsFirebase } from '../../firebase/idex';
+import { getRoomsFirebase } from '../../firebase/index';
 
 function* getRooms() {
   try {

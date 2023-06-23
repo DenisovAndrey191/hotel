@@ -4,7 +4,7 @@ import { getAccountsSuccess, logInSuccess, logOutSuccess } from '../actions/user
 import { NOTIFICATION_MESSAGE, NOTIFICATION_STATUS } from '../../constants/notifications';
 import { showNotification } from '../actions/notificationsActions';
 import { getAccountsState } from '../selectors/usersSelectors';
-import { getAccountsFirebase } from '../../firebase/idex';
+import { getAccountsFirebase } from '../../firebase/index';
 //import { getAccountsFirebase } from '../../firebase';
 
 function* getAccounts() {
