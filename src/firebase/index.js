@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 //import firebaseConfig from '../firebase/config';
-import firebaseConfig from '../firebase/config.js'
+import firebaseConfig from '../firebase/config'
 
 // To initialize your database, create a config.js file with your firebase configurations
 if (!firebase.apps.length) {
@@ -26,4 +26,13 @@ export const getAccountsFirebase = async () => {
 export const getRoomsFirebase = async () => {
   const dbRooms = await roomsRef.once('value');
   return dbRooms.val().reduce((acc, room) => ({ ...acc, [room.id]: room }), {});
+};
+
+export const updateRoomFirebase = (id, data) => {
+  roomsRef
+    .orderByChild('id')
+    .equalTo(id)
+    .on('child_added', async (snapshot) => {
+      await snapshot.ref.update(data);
+    });
 };
